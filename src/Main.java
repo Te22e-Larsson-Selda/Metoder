@@ -35,20 +35,37 @@ public class Main {
         }
     }
 
-    public static void GetChoice(){
+    public static void GetChoice(String a,String b,String c){
         Scanner sc = new Scanner(System.in);
         while(true){
             try {
-                System.out.println("");
-                System.out.println("Enter a choice: ");
-            }catch (InputMismatchException e){
+                System.out.println("1" + a);
+                System.out.println("2" + b);
+                System.out.println("3" + c);
+                System.out.println("Enter your choice: ");
+                int choice = sc.nextInt();
 
+                if (choice == 1){
+                    System.out.println("Your choice is: " + a);
+                    break;
+                }
+                else if (choice == 2){
+                    System.out.println("Your choice is: " + b);
+                    break;
+                }
+                else if (choice == 3){
+                    System.out.println("Your choice is: " + c);
+                    break;
+                }
+            }catch (InputMismatchException e){
+                sc.nextLine();
+                System.out.println("Please try again: ");
             }
         }
     }
 
     public static void main(String[] args) {
-        getNumber();
+        GetChoice("Minions", "The office", "Adventure time");
     }
 
 }
